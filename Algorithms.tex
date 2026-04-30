@@ -1,0 +1,54 @@
+\section*{Supplementary Algorithms}
+
+\subsection*{Algorithm 3: Bifid Cipher Encryption}
+\textbf{Require:} Byte array $B$, key $K$ \\
+\textbf{Ensure:} Encrypted byte array $E$
+
+Generate Polybius square using key $K$ \\
+For each byte $b$ in $B$: \\
+\quad Obtain row and column indices \\
+\quad Store row indices in sequence $R$ \\
+\quad Store column indices in sequence $C$ \\
+End for \\
+Concatenate $R$ and $C$ \\
+Regroup into coordinate pairs \\
+Map pairs back to characters \\
+Return $E$
+
+\subsection*{Algorithm 4: Nihilist Cipher Encryption}
+\textbf{Require:} Byte array $B$, key $K$ \\
+\textbf{Ensure:} Encrypted byte array $E$
+
+Generate Polybius square \\
+For each byte $b$ in $B$: \\
+\quad Convert $b$ into numeric coordinate pair \\
+\quad Convert key character into numeric coordinate \\
+\quad Add plaintext and key coordinates \\
+\quad Append result to $E$ \\
+End for \\
+Return $E$
+
+\subsection*{Algorithm 5: Tap Code Encryption}
+\textbf{Require:} Byte array $B$ \\
+\textbf{Ensure:} Encrypted byte array $E$
+
+Use fixed $5 \times 5$ grid (I/J combined) \\
+For each byte $b$ in $B$: \\
+\quad Determine row number \\
+\quad Determine column number \\
+\quad Encode as sequence of taps (row taps + column taps) \\
+End for \\
+Return $E$
+
+\subsection*{Algorithm 6: Trifid Cipher Encryption}
+\textbf{Require:} Byte array $B$, key $K$ \\
+\textbf{Ensure:} Encrypted byte array $E$
+
+Generate $3 \times 3 \times 3$ cube using key $K$ \\
+For each byte $b$ in $B$: \\
+\quad Obtain layer, row, column coordinates \\
+\quad Store coordinates sequentially \\
+End for \\
+Regroup coordinates into triplets \\
+Map triplets back to characters \\
+Return $E$
